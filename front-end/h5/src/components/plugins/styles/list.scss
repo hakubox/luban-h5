@@ -1,0 +1,40 @@
+.lbp-list {
+    position: relative;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 6px;
+
+    > .lbp-list-item {
+        padding-bottom: 4px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid #EEE;
+
+        &:last-child {
+            border-bottom-style: none;
+        }
+
+        > .lbp-list-item-title {
+            margin-bottom: 2px;
+            font-size: 16px;
+        }
+
+        > .lbp-list-item-content {
+            font-size: 12px;
+            color: #AAA;
+            margin-bottom: 4px;
+        }
+
+        > ul.lbp-list-item-tools {
+            box-sizing: border-box;
+            text-align: right;
+            padding-right: 4px;
+
+            > li {
+                display: inline-block;
+                font-size: 12px;
+                color: #CCC;
+                margin-left: 10px;
+            }
+        }
+    }
+}

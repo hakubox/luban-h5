@@ -13,6 +13,7 @@ import LbpSlide from '../components/plugins/lbp-slide'
 import LbpBgMusic from '../components/plugins/lbp-bg-music'
 import LbpNoticeBar from '../components/plugins/lbp-notice-bar'
 import LbpRate from '../components/plugins/lbp-rate'
+import LbpList from '../components/plugins/lbp-list'
 // import LbpTabs from '../components/plugins/lbp-tabs'
 
 export const pluginsList = [
@@ -182,6 +183,16 @@ export const pluginsList = [
     component: LbpBgMusic,
     visible: true,
     name: LbpBgMusic.name
+  },
+  {
+    i18nTitle: {
+      'en-US': 'List',
+      'zh-CN': '列表'
+    },
+    title: '列表',
+    component: LbpList,
+    visible: true,
+    name: LbpList.name
   }
 ]
 
