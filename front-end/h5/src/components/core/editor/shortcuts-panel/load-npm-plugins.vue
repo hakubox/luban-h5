@@ -10,7 +10,7 @@
  -->
 
 <template>
-  <div style="text-align: center">
+  <div style="width: 100%; text-align: center;">
     <a-button type="primary" @click="showModal">配置 NPM 组件列表</a-button>
     <a-modal
       title="NPM 组件列表配置信息"

@@ -91,24 +91,36 @@ export default {
   render (h) {
     // return this.renderShortCutsPanel(this.groups)
     return (
-      <a-row gutter={20}>
+      <div class="shortcut-maps" style={{ height: 'calc(100vh - 163px)', overflow: 'auto', marginRight: '0px' }}>
         {
-          [].concat(this.pluginsList, this.npmPackages).filter(plugin => plugin.visible).map(plugin => (
-            <a-col span={12} style={{ marginTop: '10px' }}>
+          [].concat(this.pluginsList, this.npmPackages).filter(plugin => plugin.visible).map(plugin => plugin.themes && plugin.themes.length ?
+          [
+            <h3 class="shortcut-category-title">{plugin.i18nTitle[this.currentLang] || plugin.title}</h3>,
+            plugin.themes.map(theme =>
               <ShortcutButton
                 clickFn={this.onClickShortcut.bind(this, plugin)}
                 // title={plugin.title}
-                title={plugin.i18nTitle[this.currentLang] || plugin.title}
-                faIcon={plugin.icon}
-                disabled={plugin.disabled}
+                title={theme.i18nTitle[this.currentLang] || theme.title || plugin.title}
+                faIcon={theme.icon}
+                img={theme.img}
+                disabled={theme.disabled}
               />
-            </a-col>
+            )
+          ] : (
+            <ShortcutButton
+              clickFn={this.onClickShortcut.bind(this, plugin)}
+              // title={plugin.title}
+              title={plugin.i18nTitle[this.currentLang] || plugin.title}
+              faIcon={plugin.icon}
+              img={plugin.img}
+              disabled={plugin.disabled}
+            />
           ))
         }
         <LoadNpmPlugins onLoadComplete={npmPackages => {
           this.npmPackages = npmPackages
         }} />
-      </a-row>
+      </div>
     )
   }
 }

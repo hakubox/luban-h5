@@ -315,7 +315,7 @@ export default {
               }
             </a-menu>
           </a-layout-sider> */}
-          <a-layout-sider width="240" theme='light' style={{ background: '#fff', padding: '12px' }}>
+          <a-layout-sider width="400" theme='light' style={{ background: '#fff', padding: '12px 4px 2px 12px' }}>
             { this._renderMenuContent() }
           </a-layout-sider>
           <a-layout id="canvas-outer-wrapper">
